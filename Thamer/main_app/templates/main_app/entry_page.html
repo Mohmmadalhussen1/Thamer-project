@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Thamer</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href={% static 'assets2/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href={% static 'assets2/vendor/aos/aos.css' %} rel="stylesheet">
+  <link href={% static 'assets2/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
+  <link href={% static 'assets2/vendor/bootstrap-icons/bootstrap-icons.css' %} rel="stylesheet">
+  <link href={% static 'assets2/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+  <link href={% static 'assets2/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+  <link href={% static 'assets2/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href={% static 'assets2/css/style.css' %} rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'main_app:entry_page' %}">Thamer<span></span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'main_app:index_page' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'main_app:over_view' %}">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'main_app:faq_page' %}">Services</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a class="nav-link scrollto" href="{% url 'main_app:contact_us' %}">Contact Us</a></li>
+          {% else %}
+          <li><a class="nav-link scrollto active" href="{% url 'users_app:login' %}">SignUp</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+<section class="d-flex flex-column align-items-center" style="height: 50vh; background-image: url('{% static 'assets2/img/banner.png' %}'); background-size: cover; background-position: center;">
+  <div class="container text-white text-center" data-aos="zoom-out" data-aos-delay="100" style="flex: 1;">
+    <div style="flex: 1;"></div><!-- This empty div will push the content to the middle -->
+    <h1>Welcome to <span>Thamer</span></h1>
+    <h2>Gateway to Local Content and IKTVA Success</h2>
+    <div class="d-flex justify-content-center">
+      <a href="{% url 'main_app:index_page' %}" class="btn btn-outline-light btn-lg">Join Us</a>
+    </div>
+    <div style="flex: 1;"></div><!-- This empty div will push the content to the middle -->
+  </div>
+</section>
+
+  <main id="main">
+          <div class="section-title">
+         <h3>Our <span>Services</span></h3>
+      </div>
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4 class="title"><a href="">Market Place</a></h4>
+              <p class="description">Our platform THAMER CONNECTS Local Suppliers, Buyers, and Marketplace investors in a smart B2B Software solution</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">IKTVA</a></h4>
+              <p class="description">Support Aramco Iktva (In-Kingdom Total Value Add)</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4 class="title"><a href="">Local Content</a></h4>
+              <p class="description">Support Local Content and Procurement Authority</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4 class="title"><a href="">Checklists and Consultation</a></h4>
+              <p class="description">Consultation services for Companies with checklists to improve the Iktva and Local Content Scores</p>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= Skills Section ======= -->
+    
+
+
+    <!-- ======= Testimonials Section ======= -->
+    <section  class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static 'assets2/img/person1.jpg' %} class="testimonial-img" alt="">
+                <h3>Arif Aabed</h3>
+                <h4>Tech Business/Apps Manger @MBC Group | Entrepreneur in Residence</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Lama Al-Hussain Cert IFR-IA-SOCPA. Founder, THAMER, I'll be watching #Thamer very closely, and I know there are great things ahead awaiting your startup!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static 'assets2/img/person2.jpeg' %}  class="testimonial-img" alt="">
+                <h3>Karim Makaram</h3>
+                <h4>Chief Executive Officer at Above The Fold</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Keep an eye out for Thamer. A business localization startup that will disrupt the way foreign and local business's tackle IKTVA and ARAMCO requirements.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src={% static 'assets2/img/person3.jpg' %}  class="testimonial-img" alt="">
+                <h3>Nisar Ahmad Zafar</h3>
+                <h4>Saudi Market Analyst,Strategist,AI,Digital twin,Metaverse &Cyber Security Enthusiast</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Lama AlHussain leads a dynamic team of young professionals in a groundbreaking entrepreneurial venture #Thamer dedicated to promoting #MadeinSaudi" products. Their innovative platform strategically connects buyers with local manufacturers and sellers, fostering a robust ecosystem that champions and promotes local content. With #Vision2030 as their guiding vision, this smart startup is not just a business but a catalyst for economic growth and the elevation of #Saudi products on the global stage.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+
+
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Thamer</span></strong>. All Rights Reserved 2023
+      </div>
+     
+    </div>
+  </footer><!-- End Footer -->
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src={% static 'assets2/vendor/purecounter/purecounter_vanilla.js' %}></script>
+  <script src={% static 'assets2/vendor/aos/aos.js' %}></script>
+  <script src={% static 'assets2/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'assets2/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'assets2/vendor/isotope-layout/isotope.pkgd.min.js' %}></script>
+  <script src={% static 'assets2/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <script src={% static 'assets2/vendor/waypoints/noframework.waypoints.js' %}></script>
+  <script src={% static 'assets2/vendor/php-email-form/validate.js' %}></script>
+
+  <!-- Template Main JS File -->
+  <script src={% static 'assets2/js/main.js' %}></script>
+
+</body>
+
+</html>

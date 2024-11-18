@@ -1,0 +1,73 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+
+{% block title %}consultation {% endblock %}
+
+{% block content %}
+
+
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Consultation</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'main_app:index_page' %}">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Consultation</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Helping You Achieve Your Local Content and Iktva Goals</h5>
+              <p>THAMER's advisory services can help you to improve your local content and Iktva performance, increase your chances of winning government and Aramco contracts, and save money.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Information about the advisory services that THAMER offers:</h5>
+
+              <!-- Default List group -->
+              <ul class="list-group">
+                <li class="list-group-item">• Local content and Iktva strategy development</li>
+                <li class="list-group-item">• Supplier identification and qualification</li>
+                <li class="list-group-item">• Iktva compliance support</li>
+                <li class="list-group-item">• Local content and Iktva training</li>
+                <li class="list-group-item">• Market research and intelligence</li>
+              </ul><!-- End Default List group -->
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card">
+            <img src="{% static 'assets/img/DefaultProfilePicture.jpg' %}" alt="Profile Picture">
+            <div class="card-body">
+              <h5 class="card-title">Lama Alhussain</h5>
+              <p class="card-text">Localization Accounting Specialist at Rawabi Holding with 7 years of experience,
+                Certificate International Financial Reporting Standards “IFRS “from (ACCA) Certificate International
+                Auditing (IA).</p>
+              <h5>Contact Info :</h5>
+              <ul>
+                <li>Email: lama_alhussain@hotmail.com</li>
+                <li>Phone: +996548344866</li>
+              </ul>
+            </div>
+          </div><!-- End Card with an image on top -->
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+
+{% endblock %}

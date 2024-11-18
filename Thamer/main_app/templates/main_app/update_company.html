@@ -1,0 +1,101 @@
+{% extends 'main_app/base.html' %}
+
+{% load static %}
+{% block title %} Update company: {{company.name}} {% endblock%}
+
+
+{% block content%}
+ <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Form Data</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'main_app:index_page' %}">Home</a></li>
+          <li class="breadcrumb-item">Update</li>
+          <li class="breadcrumb-item active">Company</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <!-- End Breadcrumbs -->
+
+<h1>Update company: {{company.name}}</h1>
+<div class="container">
+          <!-- ***** update info in model company by ID ***** -->
+    <form action="{% url 'main_app:update_company' company.id %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+                  <!-- ***** update info in model company by ID Title ***** -->
+            <label for="exampleFormControlInput1" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="name" value="{{company.name}}">
+        </div>
+          <!-- ***** update info in model company by ID Descipition ***** -->
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Description:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="fill in title" name="description">{{company.description}}</textarea>
+        </div>
+          <!-- ***** update info in model company by ID Local Score ***** -->
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Current Local Content Score:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter your local score" name="local_score" required>{{company.local_score}}</textarea>
+         </div>  
+          <!-- ***** update info in model company by ID Ikteva Score Now ***** -->
+      
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Current Iktva Score:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter your current iktva score" name="ikteva_score_now" required>{{company.ikteva_score_now}}</textarea>
+         </div>
+          <!-- ***** update info in model company by ID Ikteva Score Befor ***** -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Last Ikteva Score:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter last year iktva score" name="ikteva_score_before" required >{{company.ikteva_score_before}}</textarea>
+         </div>
+          <!-- ***** update info in model company by ID Email ***** -->
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter an email" name="email">{{company.email}}</textarea>
+        </div>
+          <!-- ***** update info in model company by ID Number ***** -->
+
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Contact Number:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter an phone number" name="contact_number">{{company.contact_number}}</textarea>
+        </div>
+
+
+          <!-- ***** fill  info in model company by ID Website ***** -->
+
+          <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">WebSite</label>
+          <textarea class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="website">{{company.website}}</textarea>
+        </div>
+          <!-- ***** fill  info in model company by ID Insgram link ***** -->
+          <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Instagram Link</label>
+          <textarea class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="instagram_link">{{company.instagram_link}}</textarea>
+        </div>
+          <!-- ***** fill  info in model company by ID Twitter link ***** -->
+          <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Twitter link</label>
+          <textarea class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="twitter_link">{{company.twitter_link}}</textarea>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Linkdin link</label>
+          <textarea class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="linkdin">{{company.twitter_link}}</textarea>
+        </div>
+          <!-- ***** submit the update info and changed in model in copmany detail page ***** -->
+        <div class="mb-3">
+            <input type="submit" value="Update info" class="btn btn-primary" />
+          <!-- ***** Delete the company Id , Id beacome Null***** -->
+            <a href="{% url 'main_app:delete_company' company.id %}" class="btn btn-danger">Delete company</a>
+
+        </div>
+
+
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+
+
+{% block title %}F.A.Q{% endblock %}
+
+{% block content %}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Frequently Asked Questions</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'main_app:index_page' %}">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item active">Frequently Asked Questions</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+     <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">FAQ Page for THAMER</h5>
+
+              <!-- Default Accordion -->
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What is THAMER?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                  THAMER is a complete dynamic website through which you can enter as a company owner or local supplier. As for the owner of the company, he registers on the site and puts the company's full data and the percentage of both local content and Iktva this year and during the 5 years to measure the company's performance. Through the site, this data is displayed in the form of tables showing the percentage of local content and Iktva for this year and the last five years.
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="accordion-item">
+                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                what is IKTVA
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      The IKTVA program in Saudi Arabia, initiated by Aramco, drives localization in the oil and gas sector by increasing local content in goods and services. It necessitates suppliers to elevate their locally produced share, boosting the domestic economy by fostering job growth and technology transfer while reinforcing the country's supply chain. Compliance with IKTVA is pivotal for companies seeking to engage in Aramco projects, compelling them to adapt and enhance capabilities to meet local content requisites, as failure to comply can result in exclusion from lucrative contracts. Ultimately, IKTVA significantly shapes the competitive landscape for businesses operating or entering the Saudi market.                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                what is Local Content Score
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      What is the Local content and procurement authority? The Local Content and Procurement Authority (LCPA) in Saudi Arabia regulates and enforces local content policies, ensuring compliance across sectors. It focuses on locally produced materials, workforce engagement, technology transfer, and service provision, aiming to fortify the economy, generate employment, and sustain industry growth. LCPA collaborates with entities to effectively implement and monitor local content regulations, fostering the country's economic development.                    </div>
+                  </div>
+                  </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Who is the target customer for THAMER?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                  THAMER is designed for all companies located in the kingdom and outside the kingdom that have Iktva score and local content score. This includes companies operating in the energy and local sector, as well as companies in other sectors that are required to meet local content and Iktva requirements.                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      What are the benefits of using THAMER?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                  THAMER provides a number of benefits for both companies and local suppliers, including:
+              <ul>
+                  <li>	Increased visibility: THAMER's catalog makes it easy for companies to find and qualify local suppliers, and for suppliers to showcase their products and services to potential customers.</li>
+                  <li>	Improved performance: THAMER's advisory services can help companies improve their local content and Iktva performance, increase their chances of winning government and Aramco contracts, and save money.</li>
+                  <li>Reduced risk: THAMER's centralized platform helps companies manage their local content and Iktva compliance, reducing the risk of fines and penalties.</li>
+              </ul>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- End Default Accordion Example -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

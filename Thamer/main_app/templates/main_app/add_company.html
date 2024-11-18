@@ -1,0 +1,117 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %} Add New company {% endblock%}
+
+
+{% block content%}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Form Elements</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'main_app:index_page' %}">Home</a></li>
+          <li class="breadcrumb-item">Add</li>
+          <li class="breadcrumb-item active">Company</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    <!-- End Breadcrumbs -->
+
+<h1>Add Company Info</h1>
+<div class="container">
+ 
+ {% if errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+         <!-- ***** calling  model   method= POST ***** -->
+    <form action="{% url 'main_app:add_company' %}" method="POST"  enctype="multipart/form-data">
+        {% csrf_token %}
+            <!-- ***** here get name in model ***** -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name of the Company:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter company name" name="name" required>
+        </div>
+            <!-- ***** here get Sectos in model ***** -->
+        <label for="exampleFormControlInput1" class="form-label mb-3"></label>
+<label for="exampleFormControlInput1" class="form-label">Sectors:</label>
+        <select name="sectors" class="form-select" aria-label="Default select example">
+        <option selected> Choose Sectors:</option>
+            <option value="Energy">Energy</option>
+            <option value="Materials">Materials</option>
+            <option value="Media and Entertainment">Media and Entertainment</option>
+            <option value="Captial goods">Captial goods</option>
+            <option value="Commercial & Professional Svc">Commercial & Professional Svc</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Consumer Durables">Consumer Durables</option>
+            <option value="Consumer Services">Consumer Services</option>
+            <option value="Retailing">Retailing</option>
+            <option value="Food & Beverages">Food & Beverages</option>
+            <option value="Health care Equipment & Svc">Health care Equipment & Svc</option>
+       
+         </select>
+
+            <!-- ***** here get local_score in model ***** -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Current local Content Score:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter your local score" name="local_score" required></textarea>
+        </div>       
+                             <!-- PDF file for local -->
+            <div class="mb-3">
+                <label for="pdf_file_local" class="form-label">please Provide certificate local Score:</label>
+                <br>
+                    <small class="form-text text-muted">Please upload a PDF file.</small>
+
+                <input type="file" name="pdf_file_local" accept=".pdf" class="form-control" required>
+            </div> 
+            <!-- ***** here get ikteva_score_now in model ***** -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Current Iktva Score:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter your current iktva score" name="ikteva_score_now" required></textarea>
+        </div>
+            <!-- ***** here get ikteva_score_befor in model ***** -->
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Last Year Iktva Score:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter last year iktva score" name="ikteva_score_before" required ></textarea>
+        </div>
+            <!-- ***** here get Description in model ***** -->
+            <div class="mb-3">
+                <label for="pdf_file_ikteva" class="form-label">please Provide certificate Iktva Score:</label>
+                                <br>
+                    <small class="form-text text-muted">Please upload a PDF file.</small>
+                <input type="file" name="pdf_file_ikteva" accept=".pdf" class="form-control" required>
+            </div>
+
+    <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Description:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter a brief description" name="description"></textarea>
+        </div>
+            <!-- ***** here get Email in model ***** -->
+
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter an email" name="email" required></textarea>
+        </div>
+            <!-- ***** here get number in model ***** -->
+            <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Contact Number:</label>
+            <textarea class="form-control" id="exampleFormControlInput1" placeholder="Enter an phone number" name="contact_number" required></textarea>
+        </div>
+            <!-- ***** btn sumbit ***** -->
+        <div class="mb-3">
+            <input type="submit" value="Create company" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
+
+</main>
+{% endblock %}

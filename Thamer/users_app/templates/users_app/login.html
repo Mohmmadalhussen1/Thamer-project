@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+    <link rel="stylesheet" href={% static 'style/style.css' %} type="text/css">
+
+</head>
+<body>
+<div class="form-modal">
+    
+    <div class="form-toggle">
+        <button id="login-toggle" onclick="toggleLogin()">Login</button>
+        <button id="signup-toggle" onclick="toggleSignup()">Sign Up</button>
+    </div>
+
+    <div id="login-form">
+        <form action="{% url 'users_app:login' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="text" name="user_name" placeholder="Enter Username" required/>
+            <input type="password" name="password" placeholder="Enter password" required/>
+            <button type="submit" class="btn login">Login</button>
+            {% if msg %}
+            <p style="color:red;">{{msg}}</p>
+            {% endif %}
+            <p><a href="javascript:void(0)">Forgotten Account?</a></p>
+            <hr/>
+
+        </form>
+    </div>
+
+    <div id="signup-form">
+
+        <form action="{% url 'users_app:signup' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="text" name="user_name" placeholder="Enter your username" required/>
+            <input type="email" name="email" placeholder="Enter your email" required/>
+            <input type="text" name="first_name" placeholder="First name" required/>
+            <input type="text" name="last_name" placeholder="Last name" required/>
+            <input type="password" name="password" placeholder="Create password" required/>
+            <input type="tel" name="phone" placeholder="Enter Phone Number 05xxxx" pattern="[0][5][0-9]{8}" required/>
+            
+
+            <button type="submit" class="btn signup">Create Account</button>
+            {% if msg %}
+            <p style="color:red;">{{msg}}</p>
+            {% endif %}
+            <p>Clicking on <strong>Create Account</strong> Means that you agree to our <a href="javascript:void(0)">Terms of Services</a>.</p>
+            <hr/>
+           
+        </form>
+    </div>
+
+</div>
+<script type="text/javascript" src={% static 'js/style.js' %}></script>
+</body>
+</html>

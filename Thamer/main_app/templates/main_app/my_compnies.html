@@ -1,0 +1,50 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %}My Company{% endblock %}
+{% block content%}
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>My Compnies</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">My Compnies</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+    {% if company %}
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-10">
+      {% for company in company %}
+          <div class="card">
+            <div class="card-body">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+              <a href="{% url 'main_app:onwer_details' company.id %}" class="card-title">{{company.name}}</a>
+              <p>{{company.description}} </p>
+
+              <!-- Tooltips Examples -->
+        <div class="mb-3">
+            <a href="{% url 'main_app:update_company' company.id %}" class="btn btn-primary rounded-pill">Update company</a>
+          <!-- ***** Delete the company Id , Id beacome Null***** -->
+            <a href="{% url 'main_app:delete_company' company.id %}" class="btn btn-danger rounded-pill">Delete company</a>
+
+        </div>
+
+              <!-- End Tooltips Examples -->
+
+            </div>
+          </div>
+         {% endfor %}
+        </div>
+
+      </div>
+  {% else %}
+    <p>You have not created any companies yet.</p>
+  {% endif %}
+    </section>
+
+  </main><!-- End #main -->
+{% endblock %}

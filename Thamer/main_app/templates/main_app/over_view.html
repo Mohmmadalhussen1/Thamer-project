@@ -1,0 +1,53 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block title %} Our business{% endblock%}
+
+
+{% block content%}
+
+
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Our business</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'main_app:index_page' %}">Home</a></li>
+          <li class="breadcrumb-item">Components</li>
+          <li class="breadcrumb-item active">Our business</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+ <!-- Card with header and footer -->
+          <div class="card">
+
+            <div class="card-body">
+              <h5 class="card-title">Goals</h5>
+             <h5>Our core strategy revolves around simplifying the complexities of Saudi localization and IKTVA management. We aim to achieve this by offering a centralized platform that serves as a one-stop solution for companies. Through this platform, businesses can easily register,and closely track their local content and IKTVA scores over time.</h5>
+            </div>
+            </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mission</h5>
+              <h5> To be the driving force behind transformative change that the 2030 vision promotes in Saudi localization and IKTVA management.Our primary focus is to offer a centralized platform that simplifies the complexities of Saudi localization, making it easier for businesses to register and continuously enhance their local content and IKTVA scores.</h5>
+            </div>
+            </div>
+              <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Vision</h5>
+             <h5> To lead the way in shaping a future where Saudi localization and IKTVA management become synonymous with efficiency, excellence, and sustainable growth.THAMER aims to help companies of all sizes to comply with local content and IKTVA requirements, save money on procurement costs, and win more government and Aramco contracts.</h5>
+            </div>
+            </div>
+            
+        </div>
+        
+
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+  
+{% endblock %}
