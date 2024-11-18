@@ -71,15 +71,12 @@ def add_company(request):
     return render(request, "main_app/add_company.html")
 
 
-def market_page(request:HttpRequest):
+def market_page(request: HttpRequest):
+    # Show all data inside the model in Market
+    companys = Company.objects.all()
 
-    #Show all data inside the model in MArket
+    return render(request, "main_app/market.html", {"companys": companys})
 
-        
-    companys = Company.objects.filter(status='approved')
-
-
-    return render(request, "main_app/market.html",  {"companys" : companys})
 
 
 
